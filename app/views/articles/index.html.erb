@@ -1,0 +1,15 @@
+<nav style="background-color: gray; padding: 20px; margin: 0; ">
+<%= link_to "Aujouter un article", new_article_path, :class => "btn" %>
+</nav>
+
+<div class="container">
+  <% @articles.each do |article| %>
+    <h1><%= article.title %></h1>
+    <p><%= article.content %></p>
+    <ul>
+      <li><%= link_to 'Modifier', edit_article_path(article), :class => "btn" %></li>
+      <li><%= link_to 'Supprimer', article, data: {turbo_method: :delete, turbo_confirm: "Êtes vous sûr ?"}, :class => "btn" %></li>
+    </ul>
+    <hr>
+  <% end %>
+</div>

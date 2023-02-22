@@ -1,0 +1,13 @@
+<div class="container">
+  <%= form_with model: @article, class: "form-article" do |f|%>
+    <div>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div>
+      <%= f.label :content %>
+      <%= f.text_area :content %>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>
